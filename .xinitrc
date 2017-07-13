@@ -8,3 +8,6 @@ xrdb -load ~/.Xresources &
 xrandr --dpi 220
 xset r rate 200 25
 exec i3 -c ~/.config/i3/i3.conf
+#exec xmonad
+
+#exec awesome

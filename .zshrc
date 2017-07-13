@@ -5,6 +5,10 @@
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
 
+PATH=$PATH:~/.cabal/bin
+PATH=$PATH:.cabal-sandbox/bin
+PATH=$PATH:~/sources/repos/ArcturusGame/tools
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jacques/.oh-my-zsh
 
@@ -92,9 +96,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
-alias i3config="nvim ~/.config/i3/config"
+alias i3config="nvim ~/.config/i3/i3.conf"
+alias xinitconf="nvim ~/.xinitrc"
+alias comptonconf="nvim ~/.config/compton.conf"
+alias thrus='dict -d moby-thesaurus'
+#alias ls='ls -l | xargs -n 2'
 
-neofetch
+if [[ -p "/home/jacques/i3workspaces/.zshpipe" ]] then
+#if [ -z ${NOSCREENFETCH+x} ]; then
+else
+    neofetch; 
+fi
 
 zstyle ':completion:*' hosts off
 # Lines configured by zsh-newuser-install
@@ -111,3 +123,8 @@ zstyle :compinstall filename '/home/jacques/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+
+    
+    #eval $(cat /home/jacques/i3workspaces/.zshpipe)
+

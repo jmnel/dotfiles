@@ -2,6 +2,8 @@ set encoding=utf-8
 set fileencoding=utf-8
 set termguicolors
 
+set t_Co=256
+
 "Plugin management stuff 
 set nocompatible
 filetype off
@@ -23,10 +25,15 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tpope/vim-surround'
 Plugin 'Yggdroot/indentLine'
-"Plugin 'oblitum/YouCompleteMe'
+"Plugin 'nathanaelkane/vim-indent-guides.git'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'sudar/comments.vim'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'lyuts/vim-rtags'
+Plugin 'tikhomirov/vim-glsl'
+
+" My own plugins
+Plugin 'jmnel/vim-konsole'
 
 " Colorscheme plugins
 Plugin 'joshdick/onedark.vim'
@@ -40,6 +47,7 @@ Plugin 'ajh17/spacegray.vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'jnurmine/Zenburn'
 Plugin 'kien/ctrlp.vim'
+Plugin 'marcelbeumer/spacedust.vim'
 "Plugin 'jmnel/Zenburn'
 
 " After all plugins...
@@ -72,13 +80,19 @@ let g:clang_format#auto_format_on_insert_leave = 1
 let g:clang_format#style_options = {
     \ "IndentWidth" : 4,
     \ "AccessModifierOffset" : -4,
-    \ "NamespaceIndentation" : "All" }
+    \ "NamespaceIndentation" : "All",
+    \ "SortIncludes" : "false" }
 
 
 " *** General coding stuff ***
 "colorscheme zenburn
 
-hi Normal ctermbg=NONE
+"set foldmethod=syntax
+"set foldlevel=1
+"set foldnestmax=2
+"set foldclose=all
+
+"hi Normal ctermbg=NONE
 
 " Fix backspace indent
 set backspace=indent,eol,start
@@ -88,6 +102,7 @@ set backspace=indent,eol,start
 set laststatus=2
 " Let plugins show effects after 500ms, not 4s
 set updatetime=500
+set nowrap
 
 "hi Normal guibg=NONE ctermbg=NONE
 " Disable mouse click to go to position
@@ -124,7 +139,8 @@ au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 "colorscheme zenburn
-colorscheme dracula
+"colorscheme dracula
+colorscheme Tomorrow
 
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/build/*/CMakeFiles/*
