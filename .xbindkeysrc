@@ -1,0 +1,19 @@
+# Increase volume
+"amixer sset Master,0 5%+ unmute && play /usr/share/sounds/MinimalSounds/stereo/volume.wav"
+    XF86AudioRaiseVolume
+
+# Decrease volume
+"amixer sset Master,0 5%- unmute && play /usr/share/sounds/MinimalSounds/stereo/volume.wav"
+    XF86AudioLowerVolume
+
+# Mute/Unmount
+"amixer sset Master 1+ toggle && play /usr/share/sounds/MinimalSounds/stereo/volume.wav"
+    XF86AudioMute
+
+# Increase backlight brightness
+"backlightctl +40"
+    XF86MonBrightnessUp
+
+# Decrease backlight brightness
+"backlightctl -50"
+    XF86MonBrightnessDown
