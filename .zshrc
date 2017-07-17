@@ -7,7 +7,7 @@ export CXX=/usr/bin/clang++
 
 PATH=$PATH:~/.cabal/bin
 PATH=$PATH:.cabal-sandbox/bin
-PATH=$PATH:~/sources/repos/ArcturusGame/tools
+PATH=$PATH:~/repos/ArcturusGame/tools
 PATH=~/bin:$PATH
 
 # Path to your oh-my-zsh installation.
