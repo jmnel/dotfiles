@@ -83,6 +83,29 @@ let g:clang_format#style_options = {
     \ "NamespaceIndentation" : "All",
     \ "SortIncludes" : "false" }
 
+function! s:safeundo()
+    let s:pos = getpos('.')
+    let s:view = winsaveview()
+    undo
+    call setpos( '.', s:pos )
+    call winrestview( s:view )
+endfunc
+
+function! s:saferedo()
+    let s:pos = getpos('.')
+    let s:view = winsaveview()
+    redo
+    call setpos( '.', s:pos )
+    call winrestview( s:view )
+endfunc
+
+command SafeUndo call s:safeundo()
+command SafeRedo call s:saferedo()
+
+nnoremap u : SafeUndo <CR>
+nnoremap <C-u> : SafeRedo <CR>
+
+"command! -nargs=0 SudoW w !sudo tee % > /dev/null
 
 " *** General coding stuff ***
 "colorscheme zenburn
@@ -138,9 +161,7 @@ let g:indentLine_faster = 1
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
-"colorscheme zenburn
-"colorscheme dracula
-colorscheme Tomorrow
+colorscheme spacegray
 
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/build/*/CMakeFiles/*
