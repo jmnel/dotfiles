@@ -103,7 +103,7 @@ command SafeUndo call s:safeundo()
 command SafeRedo call s:saferedo()
 
 nnoremap u : SafeUndo <CR>
-nnoremap <C-u> : SafeRedo <CR>
+nnoremap <C-r> : SafeRedo <CR>
 
 "command! -nargs=0 SudoW w !sudo tee % > /dev/null
 
@@ -161,7 +161,8 @@ let g:indentLine_faster = 1
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
-colorscheme Tomorrow
+"colorscheme Tomorrow
+colorscheme spacegray
 
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/build/*/CMakeFiles/*

@@ -97,11 +97,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias nvimconfig="nvim ~/.config/nvim/init.vim"
-alias i3config="nvim ~/.config/i3/i3.conf"
-alias xinitconf="nvim ~/.xinitrc"
-alias comptonconf="nvim ~/.config/compton.conf"
+# Config aliases
+alias comptonconf='nvim ~/.config/compton.conf'
+alias i3config='nvim ~/.config/i3/i3.conf'
+alias muttconfig='nvim ~/.muttrc'
+alias nvimconfig='nvim ~/.config/nvim/init.vim'
+alias taskconfig='nvim ~/.taskrc'
+alias xinitconf='nvim ~/.xinitrc'
+alias zshconfig='nvim ~/.zshrc'
+
 alias thrus='dict -d moby-thesaurus'
+
+# TaskWarrior aliases
+alias in='task add +in'
+
 #alias ls='ls -l | xargs -n 2'
 
 if [[ -p "/home/jacques/i3workspaces/.zshpipe" ]] then
