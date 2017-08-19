@@ -17,3 +17,12 @@
 # Decrease backlight brightness
 "backlightctl -50"
     XF86MonBrightnessDown
+
+"cmus-remote -r"
+    XF86AudioPrev
+
+"cmus-remote -n"
+    XF86AudioNext
+
+"cmus-remote -u"
+    XF86AudioPlay

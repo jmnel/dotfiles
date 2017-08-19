@@ -1,4 +1,3 @@
-# [Created by task 2.5.1 7/26/2017 23:13:15]
 # Taskwarrior program configuration file.
 # For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
 # 'man task-sync' or 'man taskrc'
@@ -29,3 +28,9 @@ include /usr/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
+urgency.user.project.arcturus.coefficient = 8.0
+taskd.certificate=\/home\/jacques\/.task\/jacques.cert.pem
+taskd.key=\/home\/jacques\/.task\/jacques.key.pem
+taskd.ca=\/home\/jacques\/.task\/ca.cert.pem
+taskd.server=jmnel.com:53589
+taskd.credentials=jmnel\/jacques\/371114c1-bd7d-4493-a3e7-32e376426dc5

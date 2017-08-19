@@ -8,8 +8,6 @@ set t_Co=256
 set nocompatible
 filetype off
 
-"set runtimepath^=/usr/share/nvim/runtime/plugin/youcompleteme.vim
-
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
 
@@ -53,7 +51,6 @@ Plugin 'marcelbeumer/spacedust.vim'
 " After all plugins...
 call vundle#end()
 filetype plugin indent on
-
 
 let g:ycm_complete_in_comments=1
 let g:ycm_confirm_extra_conf=0
@@ -108,7 +105,6 @@ nnoremap <C-r> : SafeRedo <CR>
 "command! -nargs=0 SudoW w !sudo tee % > /dev/null
 
 " *** General coding stuff ***
-"colorscheme zenburn
 
 "set foldmethod=syntax
 "set foldlevel=1
@@ -120,7 +116,7 @@ nnoremap <C-r> : SafeRedo <CR>
 " Fix backspace indent
 set backspace=indent,eol,start
 " Highlight column 80
-"set colorcolumn=100
+set colorcolumn=80
 " Always show status bar
 set laststatus=2
 " Let plugins show effects after 500ms, not 4s
@@ -161,11 +157,27 @@ let g:indentLine_faster = 1
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
-"colorscheme Tomorrow
-colorscheme spacegray
+colorscheme onedark
 
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/build/*/CMakeFiles/*
 set wildignore+=*/build/CMakeFiles/*
 set wildignore+=*/build/Makefile
 set wildignore+=*/build/*/Makefile
+
+" Improved key mappings
+"nnoremap <SPACE> <Nop>
+"let mapleader = ' '
+map <SPACE> <leader>
+
+"imap fj <esc>
+"imap jf <esc>
+"nnoremap ; :
+"nnoremap : ;
+noremap <Up> <C-W>k
+noremap <Down> <C-W>j
+noremap <Left> <C-W>h
+noremap <Right> <C-W>l
+
+nmap <tab> gt
+nmap <s-tab> gT
