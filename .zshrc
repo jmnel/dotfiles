@@ -1,26 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Export system compiler clang
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
-
-PATH=$PATH:~/.cabal/bin
-PATH=$PATH:.cabal-sandbox/bin
-PATH=$PATH:~/repos/ArcturusGame/tools
-PATH=~/bin:$PATH
+#set -x
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jacques/.oh-my-zsh
 
-export EDITOR=nvim
-#export VISUAL=/usr/bin/nvim
-#export TERM=screen-256color
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="msjche"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -97,45 +86,36 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Config aliases
-alias comptonconf='nvim ~/.config/compton.conf'
-alias i3config='nvim ~/.config/i3/i3.conf'
-alias muttconfig='nvim ~/.muttrc'
-alias nvimconfig='nvim ~/.config/nvim/init.vim'
-alias taskconfig='nvim ~/.taskrc'
-alias xinitconf='nvim ~/.xinitrc'
-alias zshconfig='nvim ~/.zshrc'
+alias zshconfig="nvim ~/.zshrc"
+alias nvimconfig="nvim ~/.config/nvim/init.vim"
 
-alias thrus='dict -d moby-thesaurus'
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+export cc=$CC
+export cxx=$CXX
 
-# TaskWarrior aliases
-alias in='task add +in'
+PATH=$PATH:~/repos/ArcturusGame/tools
+PATH=~/bin:$PATH
 
-#alias ls='ls -l | xargs -n 2'
+#export EDITOR=nvim
+#ZSH_THEME="msjche"
 
-if [[ -p "/home/jacques/i3workspaces/.zshpipe" ]] then
-#if [ -z ${NOSCREENFETCH+x} ]; then
-else
-    neofetch; 
-fi
-
-zstyle ':completion:*' hosts off
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt notify
-unsetopt appendhistory autocd beep extendedglob nomatch
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/jacques/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
+#WERLINE_DATE_FORMAT="%D{%d-%m}"
+#POWERLINE_HIDE_HOST_NAME="true"
+#POWERLINE_DETECT_SSH="true"
+#POWERLINE_GIT_CLEAN="✔"
+#POWERLINE_GIT_DIRTY="✘"
+#POWERLINE_GIT_ADDED="%F{green}✚%F{black}"
+#POWERLINE_GIT_MODIFIED="%F{blue}✹%F{black}"
+#POWERLINE_GIT_DELETED="%F{red}✖%F{black}"
+#POWERLINE_GIT_UNTRACKED="%F{cyan}✭%F{black}"
+#POWERLINE_GIT_RENAMED="➜"
+#POWERLINE_GIT_UNMERGED="═"
+#POWERLINE_RIGHT_A_COLOR_FRONT="black"
+#POWERLINE_RIGHT_A_COLOR_BACK="red"
 
     
-    #eval $(cat /home/jacques/i3workspaces/.zshpipe)
+#neofetch
 
+#set -x
+   

@@ -157,7 +157,7 @@ let g:indentLine_faster = 1
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
-colorscheme onedark
+colorscheme spacedust
 
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/build/*/CMakeFiles/*

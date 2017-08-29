@@ -2,7 +2,7 @@
 
 export GTK_THEME=Arc-Dark
 export TERMINAL="konsole"
-#export TERMINAL="terminator"
+export terminal="konsole"
 xrdb -load ~/.Xresources &
 ~/.fehbg &
 xrandr --dpi 220
