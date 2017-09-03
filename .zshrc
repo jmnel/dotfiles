@@ -11,6 +11,10 @@ export ZSH=/home/jacques/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="msjche"
 
+EDITOR=/usr/bin/nvim
+VISUAL=/usr/bin/nvim
+SUDO_EDITOR=/usr/bin/nvim
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
