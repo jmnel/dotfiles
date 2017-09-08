@@ -1,8 +1,11 @@
 #!/bin/bash
 
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+
 export GTK_THEME=Arc-Dark
 export TERMINAL="konsole"
 export terminal="konsole"
+export GDK_SCALE=2
 xrdb -load ~/.Xresources &
 ~/.fehbg &
 xrandr --dpi 220
