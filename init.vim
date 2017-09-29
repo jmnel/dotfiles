@@ -29,9 +29,10 @@ Plugin 'sudar/comments.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'lyuts/vim-rtags'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'lervag/vimtex'
 
 " My own plugins
-Plugin 'jmnel/vim-konsole'
+"Plugin 'jmnel/vim-konsole'
 
 " Colorscheme plugins
 Plugin 'joshdick/onedark.vim'
@@ -59,6 +60,7 @@ set completeopt-=preview
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_cache_omnifunc=0
 let g:ycm_seed_identifiers_with_syntax=1
+nnoremap <A-f> : YcmCompleter FixIt<CR>
 
 "let g:ycm_key_list_select_compliation = [ '<C-n>', '<Down>' ]
 "let g:ycm_key_list_previous_compilation = [ '<C-p>', '<Up>' ]
@@ -164,6 +166,7 @@ set wildignore+=*/build/*/CMakeFiles/*
 set wildignore+=*/build/CMakeFiles/*
 set wildignore+=*/build/Makefile
 set wildignore+=*/build/*/Makefile
+set wildignore+=*/docs/html/*
 
 " Improved key mappings
 "nnoremap <SPACE> <Nop>
@@ -181,3 +184,8 @@ noremap <Right> <C-W>l
 
 nmap <tab> gt
 nmap <s-tab> gT
+
+let g:tex_flavor='latex'
+let g:tex_conceal=''
+
+autocmd BufNewFile,BufRead *.inl set syntax=cpp

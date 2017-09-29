@@ -15,9 +15,6 @@ EDITOR=/usr/bin/nvim
 VISUAL=/usr/bin/nvim
 SUDO_EDITOR=/usr/bin/nvim
 
-export EDITOR
-export SUDO_EDITOR
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -98,13 +95,13 @@ bindkey -v
 alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
-export cc=$CC
-export cxx=$CXX
+#export CC=/usr/bin/clang
+#export CXX=/usr/bin/clang++
+#export cc=$CC
+#export cxx=$CXX
 
-export PATH=$PATH:~/repos/ArcturusGame/tools
-export PATH=~/bin:$PATH
+#export PATH=$PATH:~/repos/ArcturusGame/tools
+#export PATH=~/bin:$PATH
 
 #export EDITOR=nvim
 #ZSH_THEME="msjche"
