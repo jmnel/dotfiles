@@ -98,10 +98,13 @@ bindkey -v
 alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+export CCACHE_PREFIX="distcc"
+export CC="ccache /usr/bin/clang"
+export CXX="ccache /usr/bin/clang++"
 export cc=$CC
 export cxx=$CXX
+
+alias make="pump make -j 15"
 
 export PATH=$PATH:~/repos/ArcturusGame/tools
 export PATH=~/bin:$PATH
