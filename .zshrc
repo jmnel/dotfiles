@@ -95,16 +95,20 @@ bindkey -v
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias tconfig="nvim ~/.config/alacritty/alacritty.yml"
 alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 
-export CCACHE_PREFIX="distcc"
+#export CCACHE_PREFIX="distcc"
 export CC="ccache /usr/bin/clang"
 export CXX="ccache /usr/bin/clang++"
+#export CC="/usr/bin/clang"
+#export CXX="/usr/bin/clang++"
 export cc=$CC
 export cxx=$CXX
 
-alias make="pump make -j 15"
+#alias make="pump make -j 15"
+alias make="make -j 9"
 
 export PATH=$PATH:~/repos/ArcturusGame/tools
 export PATH=~/bin:$PATH

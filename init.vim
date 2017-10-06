@@ -16,6 +16,8 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'tpope/vim-fugitive'
+Plugin 'vim-jp/vim-cpp'
 "Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'SirVer/ultisnips'
@@ -23,13 +25,20 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tpope/vim-surround'
 Plugin 'Yggdroot/indentLine'
-"Plugin 'nathanaelkane/vim-indent-guides.git'
+
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'nathanaelkane/vim-indent-guides.git'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+"Plugin 'jeaye/color_coded'
 Plugin 'sudar/comments.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'lyuts/vim-rtags'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'lervag/vimtex'
+Plugin 'xuhdev/vim-latex-live-preview'
+
+"Plugin 'spolu/dwm.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " My own plugins
 "Plugin 'jmnel/vim-konsole'
@@ -61,6 +70,9 @@ let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_cache_omnifunc=0
 let g:ycm_seed_identifiers_with_syntax=1
 nnoremap <A-f> : YcmCompleter FixIt<CR>
+
+let g:doxygen_enhanced_color=1
+let g:load_doxygen_syntax=1
 
 "let g:ycm_key_list_select_compliation = [ '<C-n>', '<Down>' ]
 "let g:ycm_key_list_previous_compilation = [ '<C-p>', '<Up>' ]
@@ -108,17 +120,17 @@ nnoremap <C-r> : SafeRedo <CR>
 
 " *** General coding stuff ***
 
-"set foldmethod=syntax
-"set foldlevel=1
-"set foldnestmax=2
-"set foldclose=all
+set foldmethod=syntax
+set foldlevel=1
+set foldnestmax=2
+set foldclose=all
 
 "hi Normal ctermbg=NONE
 
 " Fix backspace indent
 set backspace=indent,eol,start
 " Highlight column 80
-set colorcolumn=80
+set colorcolumn=100
 " Always show status bar
 set laststatus=2
 " Let plugins show effects after 500ms, not 4s
@@ -159,7 +171,17 @@ let g:indentLine_faster = 1
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
-colorscheme spacedust
+set background=dark
+let g:gruvbox_contrast_light="hard"
+let g:gruvbox_italic=1
+let g:gruvbox_invert_signs=0
+let g:gruvbox_improved_strings=0
+let g:gruvbox_improved_warnings=1
+let g:gruvbox_undercurl=1
+let g:gruvbox_contrast_dark="hard"
+colorscheme gruvbox
+
+set termguicolors
 
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/build/*/CMakeFiles/*
@@ -187,5 +209,7 @@ nmap <s-tab> gT
 
 let g:tex_flavor='latex'
 let g:tex_conceal=''
+let g:livepreview_previewer = 'evince'
+let g:livepreview_engine = 'xelatex'
 
 autocmd BufNewFile,BufRead *.inl set syntax=cpp
