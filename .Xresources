@@ -1,0 +1,19 @@
+! urxvt
+Xft.lcdfilter: lcddefault
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.autohint: 0
+!Xft.rgba: rgba
+Xft.antialias: 1
+
+URxvt.font: xft:Hack-Regular:pixelsize=20
+
+#include "./.config/urxvt/themes/gruvbox-dark.Xresources"
+
+rofi.hide-scrollbar: true
+rofi.font:  Hack 14
+rofi.lines: 10
+rofi.eh: 2
+rofi.width: 100
+rofi.padding: 800
+!rofi.font: xft:Hack-Regular
