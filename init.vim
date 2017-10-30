@@ -18,6 +18,7 @@ Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'vim-jp/vim-cpp'
+Plugin 'Konfekt/FastFold'
 "Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'SirVer/ultisnips'
@@ -62,6 +63,8 @@ Plugin 'marcelbeumer/spacedust.vim'
 call vundle#end()
 filetype plugin indent on
 
+"let g:pyton_host_prog = '/usr/bin/nvim/
+
 let g:ycm_complete_in_comments=1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
@@ -71,8 +74,13 @@ let g:ycm_cache_omnifunc=0
 let g:ycm_seed_identifiers_with_syntax=1
 nnoremap <A-f> : YcmCompleter FixIt<CR>
 
-let g:doxygen_enhanced_color=1
-let g:load_doxygen_syntax=1
+" *** Chromatica settings ***
+"let g:chromatica#enable_at_startup=0
+"let g:chromatica#highlight_feature_level=0
+"let g:chromatica#responsive_mode=1
+
+let g:doxygen_enhanced_color=0
+"let g:load_doxygen_syntax=1
 
 "let g:ycm_key_list_select_compliation = [ '<C-n>', '<Down>' ]
 "let g:ycm_key_list_previous_compilation = [ '<C-p>', '<Up>' ]
@@ -87,10 +95,13 @@ let g:load_doxygen_syntax=1
 "let g:ycm_key_list_previous_compilation = [ '<C-k>', '<C-p>', '<Up>' ]
 
 let g:clang_format#code_style = 'google'
-let g:clang_format#auto_format_on_insert_leave = 1
+"let g:clang_format#auto_format_on_insert_leave = 1
 let g:clang_format#style_options = {
     \ "IndentWidth" : 4,
     \ "AccessModifierOffset" : -4,
+    \ "AllowShortFunctionsOnASingleLine" : "false",
+    \ "BinPackArguments" : "false",
+    \ "BinPackParameters" : "false",
     \ "NamespaceIndentation" : "All",
     \ "SortIncludes" : "false" }
 
@@ -120,10 +131,11 @@ nnoremap <C-r> : SafeRedo <CR>
 
 " *** General coding stuff ***
 
-set foldmethod=syntax
-set foldlevel=1
-set foldnestmax=2
-set foldclose=all
+"set foldmethod=syntax
+""set foldlevel=1
+"set foldnestmax=2
+""set foldclose=all
+"let g:cpp_fold = 1
 
 "hi Normal ctermbg=NONE
 
@@ -179,7 +191,7 @@ let g:gruvbox_improved_strings=0
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_undercurl=1
 let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
+colorscheme onedark
 
 set termguicolors
 
