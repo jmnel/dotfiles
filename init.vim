@@ -33,7 +33,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'jeaye/color_coded'
 Plugin 'sudar/comments.vim'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'lyuts/vim-rtags'
+"Plugin 'lyuts/vim-rtags'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'lervag/vimtex'
 Plugin 'xuhdev/vim-latex-live-preview'
@@ -131,11 +131,11 @@ nnoremap <C-r> : SafeRedo <CR>
 
 " *** General coding stuff ***
 
-"set foldmethod=syntax
-""set foldlevel=1
-"set foldnestmax=2
+set foldmethod=syntax
+set foldlevel=1
+set foldnestmax=2
 ""set foldclose=all
-"let g:cpp_fold = 1
+let g:cpp_fold = 1
 
 "hi Normal ctermbg=NONE
 
