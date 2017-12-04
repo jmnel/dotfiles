@@ -1,0 +1,67 @@
+{
+  /* =====       YCMD MANUAL START MODE       =====*/
+  /* [1] Server URL, where your YCMD server is started */
+  "ycmd_server": "http://127.0.0.1",
+  /* [2] Server's port*/
+  "ycmd_port": 8080,
+
+  /* [3] You can set a rule for filepath modification */
+  /*
+    YCMD server will be asked to work with cur_file_path.replace(from, to)
+    It can be usefull if using remote ycmd server and remote project's
+    location has different prefix from local's
+  */
+
+  /* [!UNCOMMENT THIS, IF NEEDED!] */
+  // "ycmd_filepath_replace": {
+  //   "from": "/Users/username/",
+  //   "to": "/place/home/username/",
+  // },
+
+  /* [3] HMAC is needed to securely connect to YCMD server */
+  /*
+    You should have the same HMAC settings in sublime text and in ycmd settings.
+    To generate new HMAC you can use [Command Palette] -> "Ycmd: Create HMAC keys"
+  */
+  "HMAC": "_some_base64_key_here_==",
+
+  /* =====       YCMD AUTO START MODE       =====*/
+  /*
+    If you want this plugin to automatically launch local ycmd-server:
+    a) Set "use_auto_start_localserver" to 1
+    b) Specify the path to your ycmd installation.
+    Ex:
+  */
+  // "use_auto_start_localserver": 1,
+  // "ycmd_path": "/home/USERNAME/ycmd/ycmd",
+
+  /*
+    By default, plugin starts ycmd server with it's default settings (from ycmd_path + '/default_settings.json')
+    If you want to override path to ycmd settings, uncomment this:
+  */
+  // "default_settings_path":"/home/USERNAME/ycmd/ycmd/default_settings.json",
+
+  /*
+    If you want to override path to python binary, that will be used to run ycmd server
+    and other tools, uncomment this:
+  */
+  // "python_binary_path": "/usr/local/bin/python"
+
+  /*
+    The languages you wish to use ycmd for.
+    Supported: cpp, rust, python, go
+
+    The following languages may also work, but are untested with this plugin:
+    c, erlang, java, d, lua,
+    ocaml, js, perl, objc,
+    cs, php, ruby, rust
+
+    These languages may also work if the corresponding Sublime
+    syntax plugin is installed:
+    vb, typescript, elixir
+
+    Be sure to run the "Reload language list from settings" command
+    after editing this setting
+  */
+  "languages": ["cpp", "python"],
+}
