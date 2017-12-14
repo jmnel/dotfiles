@@ -32,8 +32,12 @@ Plugin 'nathanaelkane/vim-indent-guides.git'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'jeaye/color_coded'
 Plugin 'sudar/comments.vim'
-Plugin 'rhysd/vim-clang-format'
+"Plugin 'rhysd/vim-clang-format'
 "Plugin 'lyuts/vim-rtags'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
+
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'lervag/vimtex'
 Plugin 'xuhdev/vim-latex-live-preview'
@@ -61,6 +65,12 @@ Plugin 'marcelbeumer/spacedust.vim'
 
 " After all plugins...
 call vundle#end()
+
+call glaive#Install()
+
+Glaive codefmt plugin[mappings]
+Glaive codefmt clang_format_style='file'
+
 filetype plugin indent on
 
 "let g:pyton_host_prog = '/usr/bin/nvim/
@@ -94,16 +104,16 @@ let g:doxygen_enhanced_color=0
 "let g:ycm_key_list_select_compliation = [ '<C-j>', '<C-n>', '<Down>' ]
 "let g:ycm_key_list_previous_compilation = [ '<C-k>', '<C-p>', '<Up>' ]
 
-let g:clang_format#code_style = 'google'
+"let g:clang_format#code_style = 'google'
 "let g:clang_format#auto_format_on_insert_leave = 1
-let g:clang_format#style_options = {
-    \ "IndentWidth" : 4,
-    \ "AccessModifierOffset" : -4,
-    \ "AllowShortFunctionsOnASingleLine" : "false",
-    \ "BinPackArguments" : "false",
-    \ "BinPackParameters" : "false",
-    \ "NamespaceIndentation" : "All",
-    \ "SortIncludes" : "false" }
+"let g:clang_format#style_options = {
+    "\ "IndentWidth" : 4,
+    "\ "AccessModifierOffset" : -4,
+    "\ "AllowShortFunctionsOnASingleLine" : "false",
+    "\ "BinPackArguments" : "false",
+    "\ "BinPackParameters" : "false",
+    "\ "NamespaceIndentation" : "All",
+    "\ "SortIncludes" : "false" }
 
 function! s:safeundo()
     let s:pos = getpos('.')
@@ -225,3 +235,11 @@ let g:livepreview_previewer = 'evince'
 let g:livepreview_engine = 'xelatex'
 
 autocmd BufNewFile,BufRead *.inl set syntax=cpp
+
+" Google codefmt plugin automatic settings
+augroup autoformat_settings
+    autocmd FileType c,cpp AutoFormatBuffer clang-format
+augroup END
+
+" Load my own custom vim scripts here. These will eventually be turned into plugins.
+source ~/repos/vim-scripts/CppHeaderToggle.vim
