@@ -112,6 +112,7 @@ alias make="make -j 9"
 
 export PATH=$PATH:~/repos/ArcturusGame/tools
 export PATH=~/bin:$PATH
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 #export EDITOR=nvim
 #ZSH_THEME="msjche"
