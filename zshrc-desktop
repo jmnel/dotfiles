@@ -95,6 +95,7 @@ bindkey -v
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias apacheconfig="sudoedit /etc/httpd/conf/httpd.conf"
 alias tconfig="nvim ~/.config/alacritty/alacritty.yml"
 alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
