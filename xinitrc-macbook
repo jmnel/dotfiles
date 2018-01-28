@@ -5,8 +5,10 @@ source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 export GTK_THEME=Arc-Dark
 export TERMINAL="alacritty"
 export terminal="alacritty"
-export GDK_SCALE=2
-export GDK_DPI_SCALE=0.85
+#export GDK_SCALE=2
+#export GDK_DPI_SCALE=0.85
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1.6
 xrdb -load ~/.Xresources &
 ~/.fehbg &
 xrandr --dpi 200

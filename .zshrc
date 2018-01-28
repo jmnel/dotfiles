@@ -95,6 +95,7 @@ bindkey -v
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias upgrade-sys="sudo pacman -Syu --noconfirm"
 alias tconfig="nvim ~/.config/alacritty/alacritty.yml"
 alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"

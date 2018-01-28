@@ -243,3 +243,5 @@ augroup END
 
 " Load my own custom vim scripts here. These will eventually be turned into plugins.
 source ~/repos/vim-scripts/CppHeaderToggle.vim
+
+autocmd BufNewFile,BufRead *.json set conceallevel=0
