@@ -22,7 +22,7 @@ Plugin 'Konfekt/FastFold'
 "Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'SirVer/ultisnips'
-"Plugin 'arakashic/chromatica.nvim'
+Plugin 'arakashic/chromatica.nvim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tpope/vim-surround'
 Plugin 'Yggdroot/indentLine'
@@ -49,6 +49,8 @@ Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'jmnel/vim-konsole'
 
 " Colorscheme plugins
+Plugin 'w0ng/vim-hybrid'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'dracula/vim'
 Plugin 'morhetz/gruvbox'
@@ -85,9 +87,9 @@ let g:ycm_seed_identifiers_with_syntax=1
 nnoremap <A-f> : YcmCompleter FixIt<CR>
 
 " *** Chromatica settings ***
-"let g:chromatica#enable_at_startup=0
-"let g:chromatica#highlight_feature_level=0
-"let g:chromatica#responsive_mode=1
+let g:chromatica#enable_at_startup=1
+let g:chromatica#highlight_feature_level=1
+let g:chromatica#responsive_mode=1
 
 let g:doxygen_enhanced_color=0
 "let g:load_doxygen_syntax=1
@@ -201,7 +203,7 @@ let g:gruvbox_improved_strings=0
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_undercurl=1
 let g:gruvbox_contrast_dark="hard"
-colorscheme onedark
+colorscheme hybrid
 
 set termguicolors
 
