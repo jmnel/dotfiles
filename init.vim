@@ -247,3 +247,5 @@ augroup END
 source ~/repos/vim-scripts/CppHeaderToggle.vim
 
 autocmd BufNewFile,BufRead *.json set conceallevel=0
+
+highlight LineNr ctermbg=NONE ctermfg=grey guibg=NONE guifg=grey gui=NONE

@@ -99,6 +99,7 @@ alias upgrade-sys="sudo pacman -Syu --noconfirm"
 alias tconfig="nvim ~/.config/alacritty/alacritty.yml"
 alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
+alias comptonconfig="nvim ~/.config/compton.conf"
 
 #export CCACHE_PREFIX="distcc"
 export CC="ccache /usr/bin/clang"
