@@ -109,6 +109,7 @@ export cc=$CC
 export cxx=$CXX
 
 #alias make="pump make -j 15"
+#alias grep="grep --color
 alias make="make -j 16"
 
 export PATH=$PATH:~/repos/ArcturusGame/tools

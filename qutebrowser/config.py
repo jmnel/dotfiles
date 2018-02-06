@@ -26,5 +26,6 @@ c.colors.statusbar.normal.bg = "rgba(80,80,80)"
 c.zoom.default = 125
 
 c.backend = "webengine"
+#c.backend = "webkit"
 #c.content.pdfjs = True
 
