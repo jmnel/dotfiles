@@ -20,7 +20,7 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 #exec ~/bin/scripts/nextcloud-syncd.sh &
 exec i3 -c ~/.config/i3/i3.conf
-#exec xmonad
+#exec sway
 #exec startkde
 
 #exec awesome
