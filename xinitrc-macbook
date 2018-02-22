@@ -10,14 +10,15 @@ export terminal="alacritty"
 export GDK_SCALE=1
 export GDK_DPI_SCALE=1.6
 xrdb -load ~/.Xresources &
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 ~/.fehbg &
 xrandr --dpi 200
 xset r rate 200 25
 xinput --set-prop bcm5974 "libinput Disable While Typing Enabled" 0 
-xbindkeys
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 #exec ~/bin/scripts/nextcloud-syncd.sh &
+xbindkeys
 exec i3 -c ~/.config/i3/i3.conf
 #exec xmonad
 

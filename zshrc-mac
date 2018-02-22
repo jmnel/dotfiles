@@ -38,7 +38,7 @@ export SUDO_EDITOR
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -60,7 +60,7 @@ export SUDO_EDITOR
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(colored-man-pages git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,6 +115,10 @@ alias make="make -j 9"
 export PATH=$PATH:~/repos/ArcturusGame/tools
 export PATH=~/bin:$PATH
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
+export LESS="--RAW-CONTROL-CHARS"
+
+[[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
 
 #export EDITOR=nvim
 #ZSH_THEME="msjche"

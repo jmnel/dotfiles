@@ -21,6 +21,7 @@ Plugin 'vim-jp/vim-cpp'
 Plugin 'Konfekt/FastFold'
 "Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Shougo/deoplete.nvim'
 "Plugin 'SirVer/ultisnips'
 Plugin 'arakashic/chromatica.nvim'
 Plugin 'scrooloose/nerdtree.git'
@@ -85,6 +86,9 @@ let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_cache_omnifunc=0
 let g:ycm_seed_identifiers_with_syntax=1
 nnoremap <A-f> : YcmCompleter FixIt<CR>
+
+" *** Deoplete settings ***
+"let g:deoplete#enable_at_startup = 1
 
 " *** Chromatica settings ***
 let g:chromatica#enable_at_startup=1
@@ -203,7 +207,8 @@ let g:gruvbox_improved_strings=0
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_undercurl=1
 let g:gruvbox_contrast_dark="hard"
-colorscheme hybrid
+
+colorscheme dracula
 
 set termguicolors
 
