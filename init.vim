@@ -207,8 +207,12 @@ let g:gruvbox_improved_strings=0
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_undercurl=1
 let g:gruvbox_contrast_dark="hard"
+<<<<<<< HEAD
 
 colorscheme dracula
+=======
+colorscheme onedark
+>>>>>>> c526a65fa87de20066341ad3b26cb2eec68addd3
 
 set termguicolors
 
