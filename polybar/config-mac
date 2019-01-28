@@ -307,7 +307,8 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-prefix-foreground = ${colors.foreground-alt}
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+#format-full-prefix = " "
+format-full-prefix = "F"
 #format-full = [F] <label-full>
 format-full = <label-full>
 format-full-prefix-foreground = ${colors.foreground-alt}
