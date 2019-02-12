@@ -22,7 +22,8 @@ Plugin 'Konfekt/FastFold'
 "Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Shougo/deoplete.nvim'
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 "Plugin 'arakashic/chromatica.nvim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tpope/vim-surround'
@@ -33,11 +34,12 @@ Plugin 'nathanaelkane/vim-indent-guides.git'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'jeaye/color_coded'
 Plugin 'sudar/comments.vim'
+Plugin 'vim-scripts/toggle_comment'
 "Plugin 'rhysd/vim-clang-format'
 "Plugin 'lyuts/vim-rtags'
-"Plugin 'google/vim-maktaba'
-"Plugin 'google/vim-codefmt'
-"Plugin 'google/vim-glaive'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
 
 Plugin 'tikhomirov/vim-glsl'
 "Plugin 'lervag/vimtex'
@@ -51,6 +53,7 @@ Plugin 'rust-lang/rust.vim'
 "Plugin 'racer-rust/vim-racer'
 Plugin 'vim-syntastic/syntastic'
 "Plugin 'Shougo/deoplete.nvim'
+Plugin 'cespare/vim-toml'
 
 " My own plugins
 "Plugin 'jmnel/vim-konsole'
@@ -75,10 +78,10 @@ Plugin 'marcelbeumer/spacedust.vim'
 " After all plugins...
 call vundle#end()
 
-"call glaive#Install()
+call glaive#Install()
 
-"Glaive codefmt plugin[mappings]
-"Glaive codefmt clang_format_style='file'
+Glaive codefmt plugin[mappings]
+Glaive codefmt clang_format_style='file'
 
 filetype plugin indent on
 
@@ -118,9 +121,9 @@ set hidden
 let g:rustfmt_autosave=1
 
 " *** Chromatica settings ***
-"let g:chromatica#enable_at_startup=1
-"let g:chromatica#highlight_feature_level=1
-"let g:chromatica#responsive_mode=1
+let g:chromatica#enable_at_startup=1
+let g:chromatica#highlight_feature_level=1
+let g:chromatica#responsive_mode=1
 
 let g:doxygen_enhanced_color=0
 "let g:load_doxygen_syntax=1
