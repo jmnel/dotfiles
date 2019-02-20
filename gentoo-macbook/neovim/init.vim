@@ -14,7 +14,9 @@ call vundle#begin('~/.config/nvim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 
 "Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'vim-jp/vim-cpp'
@@ -29,6 +31,7 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'tpope/vim-surround'
 Plugin 'Yggdroot/indentLine'
 
+Plugin 'pboettch/vim-cmake-syntax'
 "Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'nathanaelkane/vim-indent-guides.git'
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -84,6 +87,10 @@ Glaive codefmt plugin[mappings]
 Glaive codefmt clang_format_style='file'
 
 filetype plugin indent on
+
+" vim airline settings
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='unique_tail_improved'
 
 "let g:pyton_host_prog = '/usr/bin/nvim/
 
