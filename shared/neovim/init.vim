@@ -246,7 +246,7 @@ let g:gruvbox_improved_warnings=1
 let g:gruvbox_undercurl=1
 let g:gruvbox_contrast_dark="hard"
 
-colorscheme hybrid
+colorscheme gruvbox
 
 set termguicolors
 
@@ -271,8 +271,11 @@ noremap <Down> <C-W>j
 noremap <Left> <C-W>h
 noremap <Right> <C-W>l
 
-nmap <tab> gt
-nmap <s-tab> gT
+"nmap <tab> gt
+"nmap <s-tab> gT
+
+nmap <tab> :bnext<CR>
+nmap <s-tab> :bprevious<CR>
 
 "let g:tex_flavor='latex'
 "let g:tex_conceal=''
