@@ -196,7 +196,7 @@ let g:doxygen_enhanced_color=0
 " Fix backspace indent
 set backspace=indent,eol,start
 " Highlight column 80
-set colorcolumn=100
+set colorcolumn=120
 " Always show status bar
 set laststatus=2
 " Let plugins show effects after 500ms, not 4s
@@ -246,7 +246,7 @@ let g:gruvbox_improved_warnings=1
 let g:gruvbox_undercurl=1
 let g:gruvbox_contrast_dark="hard"
 
-colorscheme gruvbox
+colorscheme hybrid
 
 set termguicolors
 
@@ -270,6 +270,10 @@ noremap <Up> <C-W>k
 noremap <Down> <C-W>j
 noremap <Left> <C-W>h
 noremap <Right> <C-W>l
+noremap H ^
+noremap L $
+noremap ^ H
+noremap $ L
 
 "nmap <tab> gt
 "nmap <s-tab> gT
