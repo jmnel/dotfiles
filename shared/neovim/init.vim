@@ -1,3 +1,5 @@
+autocmd!
+
 set encoding=utf-8
 set fileencoding=utf-8
 set termguicolors
@@ -43,6 +45,9 @@ Plugin 'vim-scripts/toggle_comment'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
+Plugin 'sakhnik/nvim-gdb'
+"Plugin 'ncm2/float-preview.nvim'
+"Plugin 'Shougo/defx.nvim'
 
 Plugin 'tikhomirov/vim-glsl'
 "Plugin 'lervag/vimtex'
@@ -76,6 +81,9 @@ Plugin 'lifepillar/vim-solarized8'
 Plugin 'jnurmine/Zenburn'
 Plugin 'kien/ctrlp.vim'
 Plugin 'marcelbeumer/spacedust.vim'
+Plugin 'mhartington/oceanic-next'
+"Plugin 'challenger-deep-theme/vim'
+Plugin 'fenetikm/falcon'
 "Plugin 'jmnel/Zenburn'
 
 " After all plugins...
@@ -97,7 +105,8 @@ let g:airline#extensions#tabline#formatter='unique_tail_improved'
 let g:ycm_complete_in_comments=1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
-set completeopt-=preview
+"set completeopt-=preview
+let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_cache_omnifunc=0
 let g:ycm_seed_identifiers_with_syntax=1
@@ -191,7 +200,7 @@ let g:doxygen_enhanced_color=0
 ""set foldclose=all
 "let g:cpp_fold = 1
 
-"hi Normal ctermbg=NONE
+hi Normal ctermbg=NONE
 
 " Fix backspace indent
 set backspace=indent,eol,start
@@ -234,19 +243,29 @@ let g:indentLine_concealCursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
-au ColorScheme * hi Normal ctermbg=none guibg=none
-au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 set background=dark
-let g:gruvbox_contrast_light="hard"
-let g:gruvbox_italic=1
-let g:gruvbox_invert_signs=0
-let g:gruvbox_improved_strings=0
-let g:gruvbox_improved_warnings=1
-let g:gruvbox_undercurl=1
-let g:gruvbox_contrast_dark="hard"
+"let g:gruvbox_contrast_light="hard"
+"let g:gruvbox_italic=1
+"let g:gruvbox_invert_signs=0
+"let g:gruvbox_improved_strings=0
+"let g:gruvbox_improved_warnings=1
+"let g:gruvbox_undercurl=1
+"let g:gruvbox_contrast_dark="hard"
 
-colorscheme hybrid
+"highlight SignColumn ctermbg=none
+
+au ColorScheme * hi Normal ctermbg=NONE guibg=NONE
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+au ColorScheme * hi EndOfBuffer ctermbg=NONE guibg=NONE
+au ColorScheme * hi LineNr ctermbg=NONE guibg=NONE
+au ColorScheme * hi NonText  ctermbg=NONE guibg=NONE
+au ColorScheme * hi SignColumn ctermbg=NONE guibg=NONE
+au ColorScheme * hi GitGutterAdd ctermbg=NONE guibg=NONE
+au ColorScheme * hi GitGutterChange ctermbg=NONE guibg=NONE
+au ColorScheme * hi GitGutterDelete ctermbg=NONE guibg=NONE
+au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
+colorscheme dracula
 
 set termguicolors
 
@@ -275,11 +294,19 @@ noremap L $
 noremap ^ H
 noremap $ L
 
+tnoremap <Esc> <C-\><C-n>
+tnoremap <Up> <C-\><C-N><C-w>k
+tnoremap <Down> <C-\><C-N><C-w>j
+tnoremap <Left> <C-\><C-N><C-w>h
+tnoremap <Right> <C-\><C-N><C-w>l
+
 "nmap <tab> gt
 "nmap <s-tab> gT
 
 nmap <tab> :bnext<CR>
 nmap <s-tab> :bprevious<CR>
+
+nnoremap <silent> <C-B> :NERDTreeToggle<CR>
 
 "let g:tex_flavor='latex'
 "let g:tex_conceal=''
@@ -298,4 +325,3 @@ source ~/repos/jmnel/vim-scripts/CppHeaderToggle.vim
 
 autocmd BufNewFile,BufRead *.json set conceallevel=0
 
-highlight LineNr ctermbg=NONE ctermfg=grey guibg=NONE guifg=grey gui=NONE

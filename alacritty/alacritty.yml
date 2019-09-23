@@ -23,19 +23,13 @@ window.dimensions:
 # Adds this many blank pixels of padding around the window
 # Units are physical pixels; this is not DPI aware.
 # (change requires restart)
-#padding:
-#  x: 2
-#  y: 2
-
 window.padding:
-    x: 2
-    y: 2
+  x: 2
+  y: 2
 
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
 dpi:
-  #x: 96.0
-  #y: 96.0
   x: 220.0
   y: 220.0
 
@@ -49,26 +43,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: "Hack" # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    #style: "Sans Lighc"
+    family: InputMono # should be "Menlo" or something on macOS.
+    style: Regular
 
   # The bold font face
   bold:
-      #family: "Input Mono" # should be "Menlo" or something on macOS.
-    family: "Hack" # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    #style: Bold
+    family: InputMono # should be "Menlo" or something on macOS.
+    style: Bold
 
   # The italic font face
   italic:
-      #family: "Input Mono" # should be "Menlo" or something on macOS.
-    family: "Hack" # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
-    # style: Italic
+    family: InputMono # should be "Menlo" or something on macOS.
+    style: Italic
 
   # Point size of the font
-  size: 6.0
+  size: 7.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -90,10 +79,6 @@ font:
 
 # Should display the render timer
 render_timer: false
-
-# Use custom cursor colors. If true, display the cursor in the cursor.foreground
-# and cursor.background colors, otherwise invert the colors of the cursor.
-#custom_cursor_colors: false
 
 
 # Visual Bell
@@ -241,9 +226,7 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-# DEPRECATED use mouse.hide_when_typing instead
-#hide_cursor_when_typing: false
-mouse.hide_when_typing: false
+mouse.hide_cursor_when_typing: false
 
 # Live config reload (changes require restart)
 live_config_reload: true
@@ -256,31 +239,32 @@ live_config_reload: true
 #  program: /bin/bash
 #  args:
 #    - --login
-# Colors (Hybrid)
+# Colors (Dracula)
 colors:
   # Default colors
   primary:
-    background: '0x27292c'
-    foreground: '0xd0d2d1'
+    background: '0x282a36'
+    foreground: '0xf8f8f2'
 
   # Normal colors
   normal:
-    black:   '0x35383b'
-    red:     '0xb05655'
-    green:   '0x769972'
-    yellow:  '0xe1a574'
-    blue:    '0x7693ac'
-    magenta: '0x977ba0'
-    cyan:    '0x749e99'
-    white:   '0x848b92'
+      #black:   '0x000000'
+    black:   '0x111111'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xcaa9fa'
+    magenta: '0xff79c6'
+    cyan:    '0x8be9fd'
+    white:   '0xbfbfbf'
 
   # Bright colors
   bright:
-    black:   '0x484c52'
-    red:     '0xd27c7b'
-    green:   '0xdffebe'
-    yellow:  '0xf0d189'
-    blue:    '0x96b1c9'
-    magenta: '0xbfa5c7'
-    cyan:    '0x9fc9c3'
-    white:   '0xfcf7e2'
+    black:   '0x505055'
+    red:     '0xff6e67'
+    green:   '0x5af78e'
+    yellow:  '0xf4f99d'
+    blue:    '0xcaa9fa'
+    magenta: '0xff92d0'
+    cyan:    '0x9aedfe'
+    white:   '0xe6e6e6'
