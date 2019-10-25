@@ -24,15 +24,17 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-jp/vim-cpp'
 Plugin 'Konfekt/FastFold'
 "Plugin 'ervandew/supertab'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'neoclide/coc.nvim'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'neoclide/coc.nvim'
 "Plugin 'Shougo/deoplete.nvim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 "Plugin 'arakashic/chromatica.nvim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tpope/vim-surround'
-"Plugin 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
+"Plugin 'jiangmiao/auto-pairs'
+"Plugin 'auto-pairs-gentle'
 
 Plugin 'pboettch/vim-cmake-syntax'
 "Plugin 'kien/rainbow_parentheses.vim'
@@ -50,17 +52,18 @@ Plugin 'sakhnik/nvim-gdb'
 "Plugin 'ncm2/float-preview.nvim'
 "Plugin 'Shougo/defx.nvim'
 Plugin 'tikhomirov/vim-glsl'
-"Plugin 'lervag/vimtex'
+Plugin 'lervag/vimtex'
 "Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin 'spolu/dwm.vim'
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rust-lang/rust.vim'
 "Plugin 'racer-rust/vim-racer'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 "Plugin 'Shougo/deoplete.nvim'
 Plugin 'cespare/vim-toml'
 Plugin 'ryanoasis/vim-devicons'
-"Plugin 'zxqfl/tabnine-vim'
+Plugin 'ncm2/float-preview.nvim'
+Plugin 'peterhoeg/vim-qml'
 
 " My own plugins
 "Plugin 'jmnel/vim-konsole'
@@ -104,27 +107,30 @@ let g:airline#extensions#tabline#formatter='unique_tail_improved'
 "  ----------------------
 "  YouCompleteMe Settings
 "  ----------------------
-"let g:ycm_use_clangd=1
-"let g:ycm_clangd_uses_ycmd_caching=0
-"let g:ycm_clangd_binary_path=exepath("clangd")
-"let g:ycm_clangd_args=['-background-index', '-pretty', '-color']
-"let g:ycm_complete_in_comments=1
-"let g:ycm_confirm_extra_conf=0
-"let g:ycm_collect_identifiers_from_tags_files=1
-"let g:ycm_min_num_of_chars_for_completion=1
-"let g:ycm_cache_omnifunc=0
-"let g:ycm_seed_identifiers_with_syntax=1
-"let g:ycm_rust_src_path = '/home/jacques/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
-"let g:ycm_warning_symbol = ' '
-"let g:ycm_error_symbol = ' '
-"let g:syntastic_warning_symbol = ' '
-"let g:syntastic_error_symbol = ' '
-"nnoremap <A-f> : YcmCompleter FixIt<CR>
-"nnoremap <leader>gy : YcmCompleter GoTo<CR>
+let g:float_preview#docked=1
+let g:ycm_use_clangd=1
+let g:ycm_clangd_uses_ycmd_caching=0
+let g:ycm_clangd_binary_path=exepath("clangd")
+let g:ycm_clangd_args=['-background-index', '-pretty', '-color']
+let g:ycm_complete_in_comments=1
+set completeopt-=preview
+"let g:ycm_auto_close_preview_window_after_insert=1
+let g:ycm_confirm_extra_conf=0
+let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_min_num_of_chars_for_completion=1
+let g:ycm_cache_omnifunc=0
+let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_rust_src_path = '/home/jacques/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+let g:ycm_warning_symbol = ''
+let g:ycm_error_symbol = ''
+let g:syntastic_warning_symbol = ''
+let g:syntastic_error_symbol = ''
+nnoremap <A-f> : YcmCompleter FixIt<CR>
+nnoremap <leader>gy : YcmCompleter GoTo<CR>
 
-"command! ConfReload so ~/.config/nvim/init.vim
+command! ConfReload so ~/.config/nvim/init.vim
 
-"!command ConfEdit e ~/.config/nvim/init.vim
+command! ConfEdit edit $MYVIMRC
 
 " Enable word wrap in QuickFix and Location List windows.
 augroup FooBar
@@ -148,104 +154,8 @@ let g:syntastic_check_on_eq=0
 "let g:deoplete#enable_at_startup=1
 "let g:racer_experimental_completer=1
 set hidden
-
-" settings for coc nvim
-set nobackup
-set nowritebackup
-
 set cmdheight=2
 set updatetime=300
-set shortmess+=c
-
-
-let g:coc_snippet_next = '<TAB>'
-let g:coc_snippet_prev = '<S-TAB>'
-
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use `[c` and `]c` to navigate diagnostics
-"nmap <silent> [c <Plug>(coc-diagnostic-prev)
-"nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
-  autocmd!
-   Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-   Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
- Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-"nmap <silent> <TAB> <Plug>(coc-range-select)
-"xmap <silent> <TAB> <Plug>(coc-range-select)
-"xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
-
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
-
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
 
 "let g:racer_experimental_completer=1
 
@@ -389,6 +299,11 @@ set wildignore+=*/docs/html/*
 "let mapleader = ' '
 map <SPACE> <leader>
 
+" ------------------
+" AutoPairs settings
+" ------------------
+"let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
+
 "imap fj <esc>
 "imap jf <esc>
 "nnoremap ; :
@@ -440,3 +355,6 @@ autocmd BufNewFile,BufRead *.json set conceallevel=0
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "<CR>"
 
 "inoremap <silent><expr> <c-space> coc#refresh()
+
+"set indentexpr=
+"set smartindent
