@@ -64,6 +64,12 @@ Plugin 'cespare/vim-toml'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'ncm2/float-preview.nvim'
 Plugin 'peterhoeg/vim-qml'
+Plugin 'mattn/emmet-vim'
+Plugin 'StanAngeloff/php.vim'
+"Plugin 'stephy/vim-php-cs-fixer'
+
+" Python plugins
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 " My own plugins
 "Plugin 'jmnel/vim-konsole'
@@ -87,6 +93,8 @@ Plugin 'jmnel/oceanic-next'
 "Plugin 'challenger-deep-theme/vim'
 Plugin 'fenetikm/falcon'
 "Plugin 'jmnel/Zenburn'
+Plugin 'reedes/vim-colors-pencil'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " After all plugins...
 call vundle#end()
@@ -107,13 +115,13 @@ let g:airline#extensions#tabline#formatter='unique_tail_improved'
 "  ----------------------
 "  YouCompleteMe Settings
 "  ----------------------
-let g:float_preview#docked=1
+"let g:float_preview#docked=1
 let g:ycm_use_clangd=1
 let g:ycm_clangd_uses_ycmd_caching=0
 let g:ycm_clangd_binary_path=exepath("clangd")
 let g:ycm_clangd_args=['-background-index', '-pretty', '-color']
 let g:ycm_complete_in_comments=1
-set completeopt-=preview
+"set completeopt-=preview
 "let g:ycm_auto_close_preview_window_after_insert=1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
@@ -236,6 +244,26 @@ set nowrap
 let g:gitgutter_max_signs=10000
 
 " *** Python stuff ***
+
+"autocmd BufEnter * call ncm2#enable_for_buffer()
+
+set completeopt=menuone,noselect,noinsert
+set shortmess+=c
+inoremap <c-c> <ESC>
+
+"let ncm2#popup_delay = 5
+"let ncm2#complete_length = [[1, 1]]
+"let g:ncm2#matcher = 'substrfuzzy'
+
+" Jedi-vim settings
+"let g:jedi#auto_initialization = 1
+"let g:jedi#completions_enabled = 0
+"let g:jedi#auto_vim_configuration = 0
+"let g:jedi#smart_auto_mappings = 0
+"let g:jedi#popup_on_dot = 0
+"let g:jedi#completions_command = ""
+"let g:jedi#show_call_signatures = "1"
+
 syntax enable
 set number showmatch
 set shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent
@@ -260,13 +288,6 @@ let g:indentLine_faster = 1
 
 
 set background=dark
-"let g:gruvbox_contrast_light="hard"
-"let g:gruvbox_italic=1
-"let g:gruvbox_invert_signs=0
-"let g:gruvbox_improved_strings=0
-"let g:gruvbox_improved_warnings=1
-"let g:gruvbox_undercurl=1
-"let g:gruvbox_contrast_dark="hard"
 
 "highlight SignColumn ctermbg=none
 
@@ -283,7 +304,7 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
-colorscheme OceanicNext
+colorscheme PaperColor
 
 set termguicolors
 
