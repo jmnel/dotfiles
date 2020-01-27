@@ -23,12 +23,13 @@ elif [ "$#" -eq "1" ] ; then
         for file in $files ; do
             name="${file%.*}"
             extension="${file##*.}"
-            if [ "$extension" == "yml" ] ; then
+            if [ "$extension" == "yml" ] | [ "$extension" = "yaml" ] ; then
                 echo "  ${name}"
             fi
         done
     else
-        filename=~/.config/alacritty/themes/${1}.yml
+        filename=~/.config/alacritty/themes/${1}${file##*.}
+        echo "filename=${filename}"
         if [ -e $filename ] ; then
             cat ~/.config/alacritty/alacritty-core.yml > ~/.config/alacritty/alacritty.yml
             cat $filename >> ~/.config/alacritty/alacritty.yml
