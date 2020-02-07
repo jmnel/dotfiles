@@ -69,7 +69,8 @@ Plugin 'StanAngeloff/php.vim'
 "Plugin 'stephy/vim-php-cs-fixer'
 
 " Python plugins
-Plugin 'Vimjas/vim-python-pep8-indent'
+"Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'tell-k/vim-autopep8'
 
 " My own plugins
 "Plugin 'jmnel/vim-konsole'
@@ -95,6 +96,7 @@ Plugin 'fenetikm/falcon'
 "Plugin 'jmnel/Zenburn'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 
 " After all plugins...
 call vundle#end()
@@ -244,6 +246,8 @@ set nowrap
 let g:gitgutter_max_signs=10000
 
 " *** Python stuff ***
+let g:autopep8_disable_show_diff = 1
+let g:autopep8_on_save = 1
 
 "autocmd BufEnter * call ncm2#enable_for_buffer()
 
@@ -304,7 +308,7 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
-colorscheme PaperColor
+colorscheme onehalfdark
 
 set termguicolors
 
