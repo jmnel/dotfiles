@@ -43,21 +43,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Source Code Pro # should be "Menlo" or something on macOS.
+    family: Hurmit NF # should be "Menlo" or something on macOS.
     style: Regular
 
   # The bold font face
   bold:
-    family: Source Code Pro # should be "Menlo" or something on macOS.
-    style: Bold
+    family: Hurmit NF # should be "Menlo" or something on macOS.
+    style: Regular
 
   # The italic font face
   italic:
-    family: Source Code Pro # should be "Menlo" or something on macOS.
+    family: Hurmit NF # should be "Menlo" or something on macOS.
     style: Italic
 
   # Point size of the font
-  size: 8
+  size: 7.5
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.

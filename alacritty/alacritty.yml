@@ -43,21 +43,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Source Code Pro # should be "Menlo" or something on macOS.
+    family: Hurmit NF # should be "Menlo" or something on macOS.
     style: Regular
 
   # The bold font face
   bold:
-    family: Source Code Pro # should be "Menlo" or something on macOS.
-    style: Bold
+    family: Hurmit NF # should be "Menlo" or something on macOS.
+    style: Regular
 
   # The italic font face
   italic:
-    family: Source Code Pro # should be "Menlo" or something on macOS.
+    family: Hurmit NF # should be "Menlo" or something on macOS.
     style: Italic
 
   # Point size of the font
-  size: 8
+  size: 7.5
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -109,7 +109,7 @@ visual_bell:
 
 # Background opacity
 #background_opacity: 0.75
-background_opacity: 0.98
+background_opacity: 0.94
 
 # Key bindings
 #
@@ -239,28 +239,28 @@ live_config_reload: true
 #  program: /bin/bash
 #  args:
 #    - --login
-# Colors (One Half Dark)
+# Colors (One Half Light)
 colors:
   primary:
-    background: '0x282c34'
-    foreground: '0xdcdfe4'
+    background: '0xfafafa'
+    foreground: '0x383a42'
 
   normal:
-    black: '0x282c34'
-    red: '0xe06c75'
-    green: '0x98c379'
-    yellow: '0xe5c07b'
-    blue: '0x61afef'
-    magenta: '0xc678dd'
-    cyan: '0x56b6c2'
-    white: '0xdcdfe4'
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'
 
   bright:
-    black: '0x282c34'
-    red: '0xe06c75'
-    green: '0x98c379'
-    yellow: '0xe5c07b'
-    blue: '0x61afef'
-    magenta: '0xc678dd'
-    cyan: '0x56b6c2'
-    white: '0xdcdfe4'
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'

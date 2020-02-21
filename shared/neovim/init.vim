@@ -97,6 +97,7 @@ Plugin 'fenetikm/falcon'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'jonathanfilip/vim-lucius'
 
 " After all plugins...
 call vundle#end()
@@ -248,6 +249,7 @@ let g:gitgutter_max_signs=10000
 " *** Python stuff ***
 let g:autopep8_disable_show_diff = 1
 let g:autopep8_on_save = 1
+let g:autopep8_ignore='E402'
 
 "autocmd BufEnter * call ncm2#enable_for_buffer()
 
@@ -291,7 +293,7 @@ let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
 
-set background=dark
+set background=light
 
 "highlight SignColumn ctermbg=none
 
@@ -308,7 +310,7 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
-colorscheme onehalfdark
+colorscheme onehalflight
 
 set termguicolors
 
