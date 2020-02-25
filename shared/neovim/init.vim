@@ -25,6 +25,7 @@ Plugin 'vim-jp/vim-cpp'
 Plugin 'Konfekt/FastFold'
 "Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'camspiers/lens.vim'
 "Plugin 'neoclide/coc.nvim'
 "Plugin 'Shougo/deoplete.nvim'
 Plugin 'SirVer/ultisnips'
@@ -104,8 +105,8 @@ call vundle#end()
 
 call glaive#Install()
 
-Glaive codefmt plugin[mappings]
-Glaive codefmt clang_format_style='file'
+"Glaive codefmt plugin[mappings]
+"Glaive codefmt clang_format_style='file'
 
 filetype plugin indent on
 
