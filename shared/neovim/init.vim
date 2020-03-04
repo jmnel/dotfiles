@@ -36,6 +36,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'Yggdroot/indentLine'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'auto-pairs-gentle'
+Plugin 'elzr/vim-json'
 
 Plugin 'pboettch/vim-cmake-syntax'
 "Plugin 'kien/rainbow_parentheses.vim'
@@ -294,7 +295,7 @@ let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
 
-set background=light
+set background=dark
 
 "highlight SignColumn ctermbg=none
 
@@ -311,7 +312,7 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
-colorscheme onehalflight
+colorscheme zenburn
 
 set termguicolors
 
@@ -376,7 +377,10 @@ augroup END
 " Load my own custom vim scripts here. These will eventually be turned into plugins.
 source ~/repos/jmnel/vim-scripts/CppHeaderToggle.vim
 
-autocmd BufNewFile,BufRead *.json set conceallevel=0
+set conceallevel=0
+let g:indentLine_enabled = 1
+let g:vim_json_syntax_conceal = 0
+"autocmd BufNewFile,BufRead *.json set conceallevel=0
 
 "inoremap <silent><expr> <TAB> pumvisible() ? '<C-n>' : '<TAB>'
 "inoremap <silent><expr> <S-TAB> pumvisible() ? '<C-p>' : ''
