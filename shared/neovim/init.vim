@@ -25,7 +25,7 @@ Plugin 'vim-jp/vim-cpp'
 Plugin 'Konfekt/FastFold'
 "Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'camspiers/lens.vim'
+"Plugin 'camspiers/lens.vim'
 "Plugin 'neoclide/coc.nvim'
 "Plugin 'Shougo/deoplete.nvim'
 Plugin 'SirVer/ultisnips'
@@ -37,7 +37,7 @@ Plugin 'Yggdroot/indentLine'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'auto-pairs-gentle'
 Plugin 'elzr/vim-json'
-
+"Plugin 'gu-fan/riv.vim'
 Plugin 'pboettch/vim-cmake-syntax'
 "Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'nathanaelkane/vim-indent-guides.git'
@@ -68,6 +68,10 @@ Plugin 'ncm2/float-preview.nvim'
 Plugin 'peterhoeg/vim-qml'
 Plugin 'mattn/emmet-vim'
 Plugin 'StanAngeloff/php.vim'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'sbdchd/neoformat'
+Plugin 'dense-analysis/ale'
+"Plugin 'beautify-web/js-beautify'
 "Plugin 'stephy/vim-php-cs-fixer'
 
 " Python plugins
@@ -199,17 +203,6 @@ set updatetime=300
 "let g:ycm_key_list_select_compliation = [ '<C-j>', '<C-n>', '<Down>' ]
 "let g:ycm_key_list_previous_compilation = [ '<C-k>', '<C-p>', '<Up>' ]
 
-"let g:clang_format#code_style = 'google'
-"let g:clang_format#auto_format_on_insert_leave = 1
-"let g:clang_format#style_options = {
-    "\ "IndentWidth" : 4,
-    "\ "AccessModifierOffset" : -4,
-    "\ "AllowShortFunctionsOnASingleLine" : "false",
-    "\ "BinPackArguments" : "false",
-    "\ "BinPackParameters" : "false",
-    "\ "NamespaceIndentation" : "All",
-    "\ "SortIncludes" : "false" }
-
 
 " LaTeX stuff
 let g:tex_flavor='latex'
@@ -295,7 +288,7 @@ let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
 
-set background=dark
+set background=light
 
 "highlight SignColumn ctermbg=none
 
@@ -312,7 +305,7 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
-colorscheme zenburn
+colorscheme onehalflight
 
 set termguicolors
 
@@ -322,6 +315,7 @@ set wildignore+=*/build/CMakeFiles/*
 set wildignore+=*/build/Makefile
 set wildignore+=*/build/*/Makefile
 set wildignore+=*/docs/html/*
+set wildignore+=*.aux
 
 " Improved key mappings
 "nnoremap <SPACE> <Nop>
@@ -370,9 +364,9 @@ augroup END
 autocmd BufNewFile,BufRead *.inl set syntax=cpp
 
 " Google codefmt plugin automatic settings
-augroup autoformat_settings
-    autocmd FileType c,cpp AutoFormatBuffer clang-format
-augroup END
+"augroup autoformat_settings
+"    autocmd FileType c,cpp AutoFormatBuffer clang-format
+"augroup END
 
 " Load my own custom vim scripts here. These will eventually be turned into plugins.
 source ~/repos/jmnel/vim-scripts/CppHeaderToggle.vim
@@ -390,3 +384,16 @@ let g:vim_json_syntax_conceal = 0
 
 "set indentexpr=
 "set smartindent
+
+let g:ale_enabled=1
+let g:ale_fixers = {
+            \'javascript': ['eslint'],
+            \'css': ['prettier'],
+            \'html': ['prettier']
+            \}
+            
+
+
+let g:ale_lintes = {'javascript':['eslint']}
+
+let g:ale_fix_on_save=1

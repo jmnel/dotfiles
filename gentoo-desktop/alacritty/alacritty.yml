@@ -24,19 +24,14 @@ dimensions:
 # Units are physical pixels; this is not DPI aware.
 # (change requires restart)
 padding:
-  x: 0
-  y: 0
-
-dynamic_padding: true
+  x: 2
+  y: 2
 
 # The FreeType rasterizer needs to know the device DPI for best results
 # (changes require restart)
 dpi:
   x: 96.0
   y: 96.0
-
-# Display tabs using this many cells (changes require restart)
-tabspaces: 4
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
@@ -45,18 +40,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Input Mono Narrow # should be "Menlo" or something on macOS.
+    family: Iosevka NF # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
-    style: LighLight The bold font face
+    style: Light
 
+  # The bold font face
   bold:
-    family: Input Mono Narrow # should be "Menlo" or something on macOS.
+    family: Iosevka NF # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: Input Mono Narrow # should be "Menlo" or something on macOS.
+    family: Iosevka NF # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Italic
 
@@ -116,7 +112,8 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.85
+#background_opacity: 0.75
+background_opacity: 0.95
 
 # Key bindings
 #
@@ -246,31 +243,28 @@ live_config_reload: true
 #  program: /bin/bash
 #  args:
 #    - --login
-# Colors (Nord)
+# Colors (One Half Light)
 colors:
-  # Default colors
   primary:
-    background: '0x2E3440'
-    foreground: '0xD8DEE9'
+    background: '0xfafafa'
+    foreground: '0x383a42'
 
-  # Normal colors
   normal:
-    black:   '0x3B4252'
-    red:     '0xBF616A'
-    green:   '0xA3BE8C'
-    yellow:  '0xEBCB8B'
-    blue:    '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan:    '0x88C0D0'
-    white:   '0xE5E9F0'
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'
 
-  # Bright colors
   bright:
-    black:   '0x4C566A'
-    red:     '0xBF616A'
-    green:   '0xA3BE8C'
-    yellow:  '0xEBCB8B'
-    blue:    '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan:    '0x8FBCBB'
-    white:   '0xECEFF4'
+    black: '0x383a42'
+    red: '0xe45649'
+    green: '0x50a14f'
+    yellow: '0xc18401'
+    blue: '0x0184bc'
+    magenta: '0xa626a4'
+    cyan: '0x0997b3'
+    white: '0xfafafa'

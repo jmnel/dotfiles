@@ -58,7 +58,6 @@ tray-padding = 2
 
 ;wm-restack = bspwm
 wm-restack = i3
-pin-workspaces = true
 
 ;override-redirect = true
 
