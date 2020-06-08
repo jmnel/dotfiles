@@ -289,7 +289,7 @@ let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
 
-set background=light
+set background=dark
 
 "highlight SignColumn ctermbg=none
 
@@ -306,7 +306,7 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
-colorscheme onehalflight
+colorscheme onehalfdark
 
 set termguicolors
 
