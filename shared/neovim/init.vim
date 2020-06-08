@@ -392,6 +392,10 @@ let g:ale_fixers = {
             \'css': ['prettier'],
             \'html': ['prettier']
             \}
+let g:ale_linters = {
+        \'c': ['null'],                                                                                                                                                                  
+        \'cpp': ['null'],                                                                                                                                                                  
+        \}
             
 
 
