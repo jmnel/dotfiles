@@ -45,7 +45,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'jeaye/color_coded'
 Plugin 'sudar/comments.vim'
 Plugin 'vim-scripts/toggle_comment'
-"Plugin 'rhysd/vim-clang-format'
+Plugin 'rhysd/vim-clang-format'
 "Plugin 'lyuts/vim-rtags'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
@@ -226,7 +226,7 @@ hi Normal ctermbg=NONE
 " Fix backspace indent
 set backspace=indent,eol,start
 " Highlight column 80
-set colorcolumn=101
+set colorcolumn=121
 " Always show status bar
 set laststatus=2
 " Let plugins show effects after 500ms, not 4s
@@ -245,6 +245,7 @@ let g:gitgutter_max_signs=10000
 let g:autopep8_disable_show_diff = 1
 let g:autopep8_on_save = 1
 let g:autopep8_ignore='E402'
+let g:autopep8_max_line_length=120
 
 "autocmd BufEnter * call ncm2#enable_for_buffer()
 
@@ -364,9 +365,9 @@ augroup END
 autocmd BufNewFile,BufRead *.inl set syntax=cpp
 
 " Google codefmt plugin automatic settings
-"augroup autoformat_settings
-"    autocmd FileType c,cpp AutoFormatBuffer clang-format
-"augroup END
+augroup autoformat_settings
+    autocmd FileType c,cpp,hpp AutoFormatBuffer clang-format
+augroup END
 
 " Load my own custom vim scripts here. These will eventually be turned into plugins.
 source ~/repos/jmnel/vim-scripts/CppHeaderToggle.vim
