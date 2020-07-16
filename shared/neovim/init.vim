@@ -294,7 +294,6 @@ set background=dark
 "highlight SignColumn ctermbg=none
 
 au ColorScheme * hi Normal ctermbg=NONE guibg=NONE
-"au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 au ColorScheme * hi EndOfBuffer ctermbg=NONE guibg=NONE
 au ColorScheme * hi LineNr ctermbg=NONE guibg=NONE
 au ColorScheme * hi NonText  ctermbg=NONE guibg=NONE
@@ -306,7 +305,7 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
-colorscheme onehalfdark
+colorscheme Tomorrow-Night
 
 set termguicolors
 
@@ -332,20 +331,21 @@ map <SPACE> <leader>
 "imap jf <esc>
 "nnoremap ; :
 "nnoremap : ;
-noremap <Up> <C-W>k
-noremap <Down> <C-W>j
-noremap <Left> <C-W>h
-noremap <Right> <C-W>l
+noremap <Up> <C-w>k
+noremap <Down> <C-w>j
+noremap <Left> <C-w>h
+noremap <Right> <C-w>l
+
 noremap H ^
 noremap L $
 noremap ^ H
 noremap $ L
 
-tnoremap <Esc> <C-\><C-n>
-tnoremap <Up> <C-\><C-N><C-w>k
-tnoremap <Down> <C-\><C-N><C-w>j
-tnoremap <Left> <C-\><C-N><C-w>h
-tnoremap <Right> <C-\><C-N><C-w>l
+"tnoremap <Esc> <C-\><C-n>
+"tnoremap <Up> <C-\><C-N><C-w>k
+"tnoremap <Down> <C-\><C-N><C-w>j
+"tnoremap <Left> <C-\><C-N><C-w>h
+"tnoremap <Right> <C-\><C-N><C-w>l
 
 "nmap <tab> gt
 "nmap <s-tab> gT
@@ -390,15 +390,21 @@ let g:ale_enabled=1
 let g:ale_fixers = {
             \'javascript': ['eslint'],
             \'css': ['prettier'],
-            \'html': ['prettier']
+            \'python': [],
             \}
 let g:ale_linters = {
         \'c': ['null'],                                                                                                                                                                  
-        \'cpp': ['null'],                                                                                                                                                                  
+        \'cpp': ['null'],                                                                                                                               
         \}
+let g:ale_python_pylint_change_directory = 0
+"let g:ale_python_pylint_auto_pipenv = 1
             
 
 
-let g:ale_lintes = {'javascript':['eslint']}
+let g:ale_linters = {
+            \'javascript':['eslint'],
+            \'python':['pylint'],
+            \'c': ['null'],                                                                                                                                                                  
+            \'cpp': ['null'],}
 
 let g:ale_fix_on_save=1
