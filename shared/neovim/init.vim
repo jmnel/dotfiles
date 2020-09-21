@@ -97,6 +97,7 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'marcelbeumer/spacedust.vim'
 Plugin 'jmnel/oceanic-next'
+Plugin 'hzchirs/vim-material'
 "Plugin 'challenger-deep-theme/vim'
 Plugin 'fenetikm/falcon'
 "Plugin 'jmnel/Zenburn'
@@ -104,6 +105,7 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'jonathanfilip/vim-lucius'
+Plugin 'gosukiwi/vim-atom-dark'
 
 " After all plugins...
 call vundle#end()
@@ -130,8 +132,8 @@ let g:ycm_clangd_uses_ycmd_caching=0
 let g:ycm_clangd_binary_path=exepath("clangd")
 let g:ycm_clangd_args=['-background-index', '-pretty', '-color']
 let g:ycm_complete_in_comments=1
-"set completeopt-=preview
-"let g:ycm_auto_close_preview_window_after_insert=1
+"set completeopt+=preview
+let g:ycm_auto_close_preview_window_after_insert=0
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_min_num_of_chars_for_completion=1
@@ -143,7 +145,9 @@ let g:ycm_error_symbol = ''
 let g:syntastic_warning_symbol = ''
 let g:syntastic_error_symbol = ''
 nnoremap <A-f> : YcmCompleter FixIt<CR>
+nnoremap <A-r> : YcmCompleter GetDoc<CR>
 nnoremap <leader>gy : YcmCompleter GoTo<CR>
+
 
 command! ConfReload so ~/.config/nvim/init.vim
 
@@ -289,7 +293,6 @@ let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
 
-set background=dark
 
 "highlight SignColumn ctermbg=none
 
@@ -305,7 +308,9 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
-colorscheme Tomorrow-Night
+
+set background=dark
+colorscheme atom-dark
 
 set termguicolors
 
@@ -390,12 +395,7 @@ let g:ale_enabled=1
 let g:ale_fixers = {
             \'javascript': ['eslint'],
             \'css': ['prettier'],
-            \'python': [],
             \}
-let g:ale_linters = {
-        \'c': ['null'],                                                                                                                                                                  
-        \'cpp': ['null'],                                                                                                                               
-        \}
 let g:ale_python_pylint_change_directory = 0
 "let g:ale_python_pylint_auto_pipenv = 1
             
@@ -403,8 +403,8 @@ let g:ale_python_pylint_change_directory = 0
 
 let g:ale_linters = {
             \'javascript':['eslint'],
-            \'python':['pylint'],
             \'c': ['null'],                                                                                                                                                                  
-            \'cpp': ['null'],}
+            \'cpp': ['null'],
+            \'python': ['flake8'],}
 
 let g:ale_fix_on_save=1
