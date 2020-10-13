@@ -2,7 +2,7 @@
 
 killall -q polybar
 
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+while pgrep -x polybar >/dev/null; do sleep 1; done
 
-polybar main &
-polybar left &
+polybar -l info -c $HOME/.config/polybar/config main &
+polybar -l info -c $HOME/.config/polybar/config left &

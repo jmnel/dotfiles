@@ -22,6 +22,7 @@ alert = #bd2c40
 monitor = ${env:MONITOR:DP-2}
 width = 100%
 height = 60
+dpi=200
 #offset-x = 1%
 #offset-y = 1%
 #radius = 6.0
@@ -42,10 +43,14 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-#font-0 = xos4 Terminus:pixelsize=26;1
-#font-0 = FontAwesome:pixelsize=18;1
-font-0 = "Font Awesome 5 Free:style=Solid:size=18"
-font-1 = Hack:size=18
+font-0 = "Fura Code Nerd Font":style=Retina
+font-1 = FontAwesome:style=Regular
+;font-0 = xos4 Terminus:pixelsize=26;1
+;font-1 = FontAwesome:pixelsize=18;1
+;font-0 = "FiraCode Nerd Font":style=Retina,size=18
+;font-0 = "Fira Code Retina Nerd Font Complete"
+;font-1 = FontAwesome:style=Regular,size=18
+;font-0 = Hack:size=18
 
 modules-left = i3
 modules-center =
@@ -262,7 +267,7 @@ label = %percentage_used%%
 
 [module/eth]
 type = internal/network
-interface = enp38s0
+interface = enp8s0
 interval = 3.0
 
 format-connected-underline = #388E3C
