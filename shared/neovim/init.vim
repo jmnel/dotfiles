@@ -250,6 +250,7 @@ let g:autopep8_disable_show_diff = 1
 let g:autopep8_on_save = 1
 let g:autopep8_ignore='E402'
 let g:autopep8_max_line_length=120
+let g:autopep8_language_level=3
 
 "autocmd BufEnter * call ncm2#enable_for_buffer()
 
@@ -310,7 +311,7 @@ let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
 
 set background=dark
-colorscheme atom-dark
+colorscheme OceanicNext
 
 set termguicolors
 
