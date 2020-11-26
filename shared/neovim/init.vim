@@ -106,6 +106,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'gosukiwi/vim-atom-dark'
+Plugin 'ayu-theme/ayu-vim'
 
 " After all plugins...
 call vundle#end()
@@ -310,8 +311,10 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
 
-set background=dark
-colorscheme OceanicNext
+"set background=dark
+"colorscheme OceanicNext
+let ayucolor="light"
+colorscheme ayu
 
 set termguicolors
 
