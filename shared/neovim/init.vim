@@ -73,6 +73,10 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'dense-analysis/ale'
 "Plugin 'beautify-web/js-beautify'
 "Plugin 'stephy/vim-php-cs-fixer'
+"Plugin 'glench/vim-jinja2-syntax'
+"Plugin 'pearofducks/ansible-vim'
+Plugin 'chase/vim-ansible-yaml.git'
+Plugin 'lepture/vim-jinja.git'
 
 " Python plugins
 "Plugin 'Vimjas/vim-python-pep8-indent'
@@ -107,6 +111,7 @@ Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'ayu-theme/ayu-vim'
+Plugin 'danilo-augusto/vim-afterglow'
 
 " After all plugins...
 call vundle#end()
@@ -212,6 +217,7 @@ set updatetime=300
 " LaTeX stuff
 let g:tex_flavor='latex'
 let g:tex_conceal=''
+let g:vimtex_view_general_viewer='zathura'
 "let g:livepreview_previewer = ''
 "let g:livepreview_engine = 'xelatex'
 
@@ -311,10 +317,10 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
 
-"set background=dark
+set background=light
 "colorscheme OceanicNext
-let ayucolor="light"
-colorscheme ayu
+"let ayucolor="light"
+colorscheme lucius
 
 set termguicolors
 
@@ -386,6 +392,9 @@ let g:indentLine_enabled = 1
 let g:vim_json_syntax_conceal = 0
 "autocmd BufNewFile,BufRead *.json set conceallevel=0
 
+" Fix YAML indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 "inoremap <silent><expr> <TAB> pumvisible() ? '<C-n>' : '<TAB>'
 "inoremap <silent><expr> <S-TAB> pumvisible() ? '<C-p>' : ''
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "<CR>"
@@ -399,6 +408,7 @@ let g:ale_enabled=1
 let g:ale_fixers = {
             \'javascript': ['eslint'],
             \'css': ['prettier'],
+            \'json':['fixjson'],
             \}
 let g:ale_python_pylint_change_directory = 0
 "let g:ale_python_pylint_auto_pipenv = 1
