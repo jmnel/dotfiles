@@ -77,6 +77,12 @@ Plugin 'dense-analysis/ale'
 " Python plugins
 "Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'chase/vim-ansible-yaml.git'
+Plugin 'lepture/vim-jinja.git'
+Plugin 'ekalinin/Dockerfile.vim'
+
+Plugin 'hashivim/vim-terraform'
+"Plugin 'b4b4r07/vim-sqlfmt'
 
 " My own plugins
 "Plugin 'jmnel/vim-konsole'
@@ -107,6 +113,7 @@ Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'ayu-theme/ayu-vim'
+Plugin 'danilo-augusto/vim-afterglow'
 
 " After all plugins...
 call vundle#end()
@@ -211,8 +218,9 @@ set updatetime=300
 
 " LaTeX stuff
 let g:tex_flavor='latex'
-let g:tex_conceal=''
-"let g:livepreview_previewer = ''
+let g:vimtex_view_general_viewer = 'zathura'
+"let g:tex_conceal=0
+"let g:livepreview_previewer = 'zathura'
 "let g:livepreview_engine = 'xelatex'
 
 
@@ -293,6 +301,7 @@ let g:indentLine_enabled=1
 let g:indentLine_concealCursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
+let g:indentLine_fileTypeExclude = ['tex']
 
 
 
@@ -311,10 +320,11 @@ au ColorScheme * hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic =1
 
-"set background=dark
-"colorscheme OceanicNext
-let ayucolor="light"
-colorscheme ayu
+set background=dark
+let g:gruvbox_italic = 1
+"colorscheme lucius
+"LuciusWhite
+colorscheme afterglow
 
 set termguicolors
 
@@ -381,11 +391,13 @@ augroup END
 " Load my own custom vim scripts here. These will eventually be turned into plugins.
 source ~/repos/jmnel/vim-scripts/CppHeaderToggle.vim
 
-set conceallevel=0
 let g:indentLine_enabled = 1
 let g:vim_json_syntax_conceal = 0
 "autocmd BufNewFile,BufRead *.json set conceallevel=0
 
+" Fix YAML indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType sql setlocal ts=2 sts=2 sw=2 expandtab
 "inoremap <silent><expr> <TAB> pumvisible() ? '<C-n>' : '<TAB>'
 "inoremap <silent><expr> <S-TAB> pumvisible() ? '<C-p>' : ''
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "<CR>"
@@ -399,6 +411,7 @@ let g:ale_enabled=1
 let g:ale_fixers = {
             \'javascript': ['eslint'],
             \'css': ['prettier'],
+            \'json': ['fixjson'],
             \}
 let g:ale_python_pylint_change_directory = 0
 "let g:ale_python_pylint_auto_pipenv = 1
