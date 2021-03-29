@@ -73,12 +73,15 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'dense-analysis/ale'
 "Plugin 'beautify-web/js-beautify'
 "Plugin 'stephy/vim-php-cs-fixer'
+"Plugin 'glench/vim-jinja2-syntax'
+"Plugin 'pearofducks/ansible-vim'
+"Plugin 'chase/vim-ansible-yaml.git'
+Plugin 'chase/vim-ansible-yaml.git'
+Plugin 'lepture/vim-jinja.git'
 
 " Python plugins
 "Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'tell-k/vim-autopep8'
-Plugin 'chase/vim-ansible-yaml.git'
-Plugin 'lepture/vim-jinja.git'
 Plugin 'ekalinin/Dockerfile.vim'
 
 Plugin 'hashivim/vim-terraform'
@@ -218,10 +221,11 @@ set updatetime=300
 
 " LaTeX stuff
 let g:tex_flavor='latex'
-let g:vimtex_view_general_viewer = 'zathura'
 "let g:tex_conceal=0
 "let g:livepreview_previewer = 'zathura'
-"let g:livepreview_engine = 'xelatex'
+let g:tex_conceal=''
+let g:vimtex_view_general_viewer='zathura'
+"let g:livepreview_previewer = ''
 
 
 
@@ -398,6 +402,7 @@ let g:vim_json_syntax_conceal = 0
 " Fix YAML indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType sql setlocal ts=2 sts=2 sw=2 expandtab
+
 "inoremap <silent><expr> <TAB> pumvisible() ? '<C-n>' : '<TAB>'
 "inoremap <silent><expr> <S-TAB> pumvisible() ? '<C-p>' : ''
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "<CR>"
